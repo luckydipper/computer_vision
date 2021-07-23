@@ -165,3 +165,4 @@ dmypy.json
 
 .vs/
 opencv/
+boost_1_76_0/

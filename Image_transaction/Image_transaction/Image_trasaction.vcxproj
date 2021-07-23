@@ -73,15 +73,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -89,12 +97,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\include;C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\x64\vc15\lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\x64\vc15\lib;C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0\stage\lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>opencv_world450d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -106,14 +114,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\include;C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\x64\vc15\lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\x64\vc15\lib;C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0\stage\lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>opencv_world450d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -123,12 +131,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\include;C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\x64\vc15\lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\x64\vc15\lib;C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0\stage\lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>opencv_world450d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -140,19 +148,20 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\include;C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\x64\vc15\lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\user\Desktop\SW\computer_vision_club\opencv\build\x64\vc15\lib;C:\Users\user\Desktop\SW\computer_vision_club\boost_1_76_0\boost_1_76_0\stage\lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>opencv_world450d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
