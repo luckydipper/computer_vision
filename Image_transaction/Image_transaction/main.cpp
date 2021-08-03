@@ -1,38 +1,36 @@
 
-//#include <stdio.h>
-//
-//#include <opencv2/imgcodecs.hpp>
-//#include <opencv2/videoio.hpp>
-//#include <opencv2/highgui.hpp>
+#include <stdio.h>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/videoio.hpp>
+#include <opencv2/highgui.hpp>
+//#include <iostream>
+//#include <boost/any.hpp>
+//#include <boost/asio.hpp>
+//#include <libs/asio/example/cpp11/socks4/socks4.hpp>
+//#include <array>
+//#include <iomanip>
+//#include <ostream>
+//#include <string>
 
-#include <iostream>
-#include <boost/any.hpp>
-#include <boost/asio.hpp>
-#include <libs/asio/example/cpp11/socks4/socks4.hpp>
-#include <array>
-#include <iomanip>
-#include <ostream>
-#include <string>
-
-//using namespace cv;
+using namespace cv;
 //using namespace std;
 
-using boost::asio::ip::tcp;
+//using boost::asio::ip::tcp;
 
 int main(int argc, char* argv[]) {
 
-    //Mat img = imread("web.jpg"); //자신이 저장시킨 이미지 이름이 입력되어야 함, 확장자까지
+    Mat img = imread("web.jpg"); //자신이 저장시킨 이미지 이름이 입력되어야 함, 확장자까지
 
-    //imshow("img", img);
-    //waitKey(0);
- 
+    imshow("img", img);
+    waitKey(0);
+}
     //boost::any a1 = 1;
     //boost::any a2 = 1.1;
     //boost::any a3 = "aaa";
 
     //const char* s = boost::any_cast<const char*>(a3);
 
-    try
+   /* try
     {
         if (argc != 4)
         {
@@ -43,65 +41,65 @@ int main(int argc, char* argv[]) {
             return 1;
         }
 
-        boost::asio::io_context io_context;
+        boost::asio::io_context io_context;*/
 
         // Get a list of endpoints corresponding to the SOCKS 4 server name.
-        tcp::resolver resolver(io_context);
-        auto endpoints = resolver.resolve(argv[1], argv[2]);
+    //    tcp::resolver resolver(io_context);
+    //    auto endpoints = resolver.resolve(argv[1], argv[2]);
 
-        // Try each endpoint until we successfully establish a connection to the
-        // SOCKS 4 server.
-        tcp::socket socket(io_context);
-        boost::asio::connect(socket, endpoints);
+    //    // Try each endpoint until we successfully establish a connection to the
+    //    // SOCKS 4 server.
+    //    tcp::socket socket(io_context);
+    //    boost::asio::connect(socket, endpoints);
 
-        // Get an endpoint for the Boost website. This will be passed to the SOCKS
-        // 4 server. Explicitly specify IPv4 since SOCKS 4 does not support IPv6.
-        auto http_endpoint =
-            *resolver.resolve(tcp::v4(), "www.boost.org", "http").begin();
+    //    // Get an endpoint for the Boost website. This will be passed to the SOCKS
+    //    // 4 server. Explicitly specify IPv4 since SOCKS 4 does not support IPv6.
+    //    auto http_endpoint =
+    //        *resolver.resolve(tcp::v4(), "www.boost.org", "http").begin();
 
-        // Send the request to the SOCKS 4 server.
-        socks4::request socks_request(
-            socks4::request::connect, http_endpoint, argv[3]);
-        boost::asio::write(socket, socks_request.buffers());
+    //    // Send the request to the SOCKS 4 server.
+    //    socks4::request socks_request(
+    //        socks4::request::connect, http_endpoint, argv[3]);
+    //    boost::asio::write(socket, socks_request.buffers());
 
-        // Receive a response from the SOCKS 4 server.
-        socks4::reply socks_reply;
-        boost::asio::read(socket, socks_reply.buffers());
+    //    // Receive a response from the SOCKS 4 server.
+    //    socks4::reply socks_reply;
+    //    boost::asio::read(socket, socks_reply.buffers());
 
-        // Check whether we successfully negotiated with the SOCKS 4 server.
-        if (!socks_reply.success())
-        {
-            std::cout << "Connection failed.\n";
-            std::cout << "status = 0x" << std::hex << socks_reply.status();
-            return 1;
-        }
+    //    // Check whether we successfully negotiated with the SOCKS 4 server.
+    //    if (!socks_reply.success())
+    //    {
+    //        std::cout << "Connection failed.\n";
+    //        std::cout << "status = 0x" << std::hex << socks_reply.status();
+    //        return 1;
+    //    }
 
-        // Form the HTTP request. We specify the "Connection: close" header so that
-        // the server will close the socket after transmitting the response. This
-        // will allow us to treat all data up until the EOF as the response.
-        std::string request =
-            "GET / HTTP/1.0\r\n"
-            "Host: www.boost.org\r\n"
-            "Accept: */*\r\n"
-            "Connection: close\r\n\r\n";
+    //    // Form the HTTP request. We specify the "Connection: close" header so that
+    //    // the server will close the socket after transmitting the response. This
+    //    // will allow us to treat all data up until the EOF as the response.
+    //    std::string request =
+    //        "GET / HTTP/1.0\r\n"
+    //        "Host: www.boost.org\r\n"
+    //        "Accept: */*\r\n"
+    //        "Connection: close\r\n\r\n";
 
-        // Send the HTTP request.
-        boost::asio::write(socket, boost::asio::buffer(request));
+    //    // Send the HTTP request.
+    //    boost::asio::write(socket, boost::asio::buffer(request));
 
-        // Read until EOF, writing data to output as we go.
-        std::array<char, 512> response;
-        boost::system::error_code error;
-        while (std::size_t s = socket.read_some(
-            boost::asio::buffer(response), error))
-            std::cout.write(response.data(), s);
-        if (error != boost::asio::error::eof)
-            throw std::system_error(error);
-    }
-    catch (std::exception& e)
-    {
-        std::cout << "Exception: " << e.what() << "\n";
-    }
+    //    // Read until EOF, writing data to output as we go.
+    //    std::array<char, 512> response;
+    //    boost::system::error_code error;
+    //    while (std::size_t s = socket.read_some(
+    //        boost::asio::buffer(response), error))
+    //        std::cout.write(response.data(), s);
+    //    if (error != boost::asio::error::eof)
+    //        throw std::system_error(error);
+    //}
+    //catch (std::exception& e)
+    //{
+    //    std::cout << "Exception: " << e.what() << "\n";
+    //}
 
-    return 0;
+    //return 0;
 
-}
+//}
