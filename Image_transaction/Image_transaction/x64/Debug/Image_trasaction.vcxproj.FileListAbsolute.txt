@@ -1,5 +1,0 @@
-C:\Users\user\Desktop\SW\computer_vision_club\Image_trasaction\Image_transaction\x64\Debug\Image_transaction.exe
-C:\Users\user\Desktop\SW\computer_vision_club\Image_trasaction\Image_transaction\x64\Debug\Image_transaction.pdb
-C:\Users\user\Desktop\SW\computer_vision_club\Image_transaction\x64\Debug\Image_transaction.pdb
-C:\Users\user\Desktop\SW\computer_vision_club\Image_transaction\Image_transaction\x64\Debug\Image_transaction.exe
-C:\Users\user\Desktop\SW\computer_vision_club\Image_transaction\Image_transaction\x64\Debug\Image_transaction.pdb
